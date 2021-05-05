@@ -5,9 +5,9 @@ This model was developed to support the early efforts in the identification of n
 ## Summary
 * Predicts **protease inhibitory** activity of small molecules
 * The training set includes **>25,000** molecules
-* The **high-throughput assay** measured the inhibitory activity of small molecules(at 300uM) against recombinant SARS-3CLpro(at 150nM) by used a FRET-quenched fluorescent       SARS-3CLpro substrate (at 2uM) that emitted fluorescence when cleaved by 3CLpro. 
+* The **high-throughput assay** measured the inhibitory activity of small molecules(at 300uM) against recombinant SARS-3CLpro(at 150nM) by using a FRET-quenched fluorescent       SARS-3CLpro substrate (at 2uM) that emitted fluorescence when cleaved by 3CLpro. 
 * The assay is recorded in PubChem [AID1706](https://pubchem.ncbi.nlm.nih.gov/bioassay/1706#section=Protocol)
-* Processed data can be downloaded [here](https://github.com/yangkevin2/coronavirus_data/blob/master/data/AID1706_binarized_sars.csv)
+* Processed **data** can be downloaded [here](https://github.com/yangkevin2/coronavirus_data/blob/master/data/AID1706_binarized_sars.csv)
 
 ## Specifications
 * Input: SMILES string
