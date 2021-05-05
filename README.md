@@ -10,7 +10,7 @@ This model was developed to support the early efforts in the identification of n
 * Processed **data** can be downloaded [here](https://github.com/yangkevin2/coronavirus_data/blob/master/data/AID1706_binarized_sars.csv)
 
 ## Specifications
-* Input: SMILES string
+* Input: SMILES string (also accepts an InChIKey string or a molecule name string, and converts them to SMILES) 
 * Endpoint: 3CL protease inhibitory activity (0-1 score)
 * Results interpretation:
     * Active compounds: 0.15 - 1
