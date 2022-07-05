@@ -1,22 +1,27 @@
-# Inhibition of SARS-CoV 3CL protease
+# SARS-CoV inhibition
 
-This model was developed to support the early efforts in the identification of novel drugs against SARS-CoV2. It predicts the probability that a small molecule inhibits SARS-3CLpro-mediated peptide cleavage. It was developed using a high-throughput screening against the 3CL protease of SARS-CoV1, as no data was yet available for the new virus (SARS-CoV2) causing the COVID-19 pandemic. 
+## Model Identifiers
+- Slug: chemprop-sars-cov-inhibition
+- Ersilia ID: eos9f6t
+- Tags: COVID19,	inhibitor,	antiviral
 
-## Summary
-* Predicts **protease inhibitory** activity of small molecules
-* The training set includes **>25,000** molecules (406 active hits)
-* The **high-throughput assay** measured the inhibitory activity of small molecules against recombinant SARS-3CLpro by using a FRET-quenched fluorescent SARS-3CLpro substrate     that emitted fluorescence when cleaved. 
-* The assay is recorded in PubChem [AID1706](https://pubchem.ncbi.nlm.nih.gov/bioassay/1706#section=Protocol)
-* Processed **data** can be downloaded [here](https://github.com/yangkevin2/coronavirus_data/blob/master/data/AID1706_binarized_sars.csv)
+## Model Description
+This model was developed to support the early efforts in the identification of novel drugs against SARS-CoV2. It predicts the probability that a small molecule inhibits SARS-3CL pro-mediated peptide cleavage. It was developed using a high-throughput screening against the 3CL protease of SARS-CoV1, as no data was yet available for the new virus (SARS-CoV2) causing the COVID-19 pandemic.
+- Input: SMILES
+- Output: Probability	(Probability of 3CL protease inhibition)
+- Model type: Regressiom
+- Mode of Training: Pretrained
+- Training data: 261,653	https://pubchem.ncbi.nlm.nih.gov/bioassay/1706
+- Experimentally validated: No
 
-## Specifications
-* Input: SMILES string (also accepts an InChIKey string or a molecule name string, and converts them to SMILES) 
-* Endpoint: 3CL protease inhibitory activity (0: inactive -1: active)
-* Results interpretation:
-    * 70% of the original active compounds in the assay score >0.5 with the SARS-Balanced model
-    * 3CL protease retains 96% homology between SARS-CoV1 and SARS-CoV2, so results are highly extrapolable.
+## Source code
+This model was published by National Center for Biotechnology Information. PubChem Bioassay Record for AID 1706, Source: The Scripps Research Institute Molecular Screening Center. https://pubchem.ncbi.nlm.nih.gov/bioassay/1706. Accessed July 5, 2022.
+- Code: https://github.com/chemprop/chemprop
+- Chedkpoints: http://chemprop.csail.mit.edu/checkpoints
+
+## License
+The GPL-v3 license applies to all parts of the repository that are not externally maintained libraries. This repository uses the externally maintained library "chemprop", located at `/model` and licensed under a BSD-3 License
 
 ## History
-1. Model was downloaded on 29.04/2021 from [Chemprop](http://chemprop.csail.mit.edu/checkpoints)
-2. We duplicated predict.py and scripts/save_features.py scripts from chemprop GitHub repository.
-3. Model was incorporated to Ersilia on 29/04/2021.
+- This model was downloaded on August 01, 2021
+- This model was incorporated on September, 01, 2021
