@@ -23,6 +23,9 @@ This model was developed to support the early efforts in the identification of n
 * [Source Code](http://chemprop.csail.mit.edu/checkpoints)
 * Ersilia contributor: [miquelduranfrigola](https://github.com/miquelduranfrigola)
 
+## Ersilia model URLs
+* [GitHub](https://github.com/ersilia-os/eos9f6t)
+
 ## Citation
 
 If you use this model, please cite the [original authors](https://www.sciencedirect.com/science/article/pii/S0092867420301021) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
