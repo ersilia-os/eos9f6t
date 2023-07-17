@@ -53,13 +53,13 @@ class ChempropModel(object):
         run_file = os.path.join(tmp_folder, self.RUN_FILE)
         with open(run_file, "w") as f:
             lines = [
-                "bash {0}/run.sh {0} {1} {2}{4}".format(
+                "bash {0}/run.sh {0} {1} {2} {3}".format(
                         self.framework_dir,
                         data_file,
-                        output_file,
                         self.checkpoints_dir,
+                        output_file
                     )
-                ]
+                ] 
             f.write(os.linesep.join(lines)) 
         cmd = "bash {0}".format(run_file)
         with open(log_file, "w") as fp:
@@ -70,12 +70,10 @@ class ChempropModel(object):
             reader = csv.reader(f)
             h = next(reader)
             R = []
-            for r in R:
-                result += [{h[1]: float(r[1])}]
-        result = {
-            'result': R,
-            'meta': h[1]
-        }
+            for r in reader: 
+                R += [{h[1]: float(r[1])}]
+        meta = {h[1]: h[1]}        
+        result = {'result': R, 'meta': meta} 
         shutil.rmtree(tmp_folder) 
         return result
 
@@ -136,4 +134,5 @@ class Service(BentoService):
         input = input[0]
         input_list = [inp["input"] for inp in input]
         output = self.artifacts.model.run(input_list)
+        print('Returning output: ', output)
         return [output]
