@@ -113,4 +113,6 @@ def generate_and_save_features(args: Args):
 
 
 if __name__ == '__main__':
+    print('now getting features')
     generate_and_save_features(Args().parse_args())
+    print('finished getting features')
