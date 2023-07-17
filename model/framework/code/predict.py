@@ -2,9 +2,11 @@
 import os
 from chemprop.train import chemprop_predict
 
-if __name__ == '__main__':
-    print('now predicting')
-    chemprop_predict()
-    print('done predicting')
+# current file directory
+root = os.path.dirname(os.path.abspath(__file__))
+features_file =  os.path.abspath(os.path.join(root, "..","features.npz"))
+
+if __name__ == '__main__': 
+    chemprop_predict() 
     #Remove features file after
-    # os.remove('features.npz')
+    os.remove(features_file)
