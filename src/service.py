@@ -12,7 +12,7 @@ import pickle
 
 from bentoml.service import BentoServiceArtifact
 
-CHECKPOINTS_BASEDIR = "checkpoints/SARSBalanced"
+CHECKPOINTS_BASEDIR = "checkpoints"
 FRAMEWORK_BASEDIR = "framework"
 
 MODEL_NAME = "model"
@@ -26,7 +26,8 @@ def load_chemprop_model(framework_dir, checkpoints_dir):
 
 class ChempropModel(object):
     def __init__(self):
-        self.DATA_FILE = "_data.csv" 
+        self.DATA_FILE = "_data.csv"
+        self.FEAT_FILE = "features.npz"
         self.OUTPUT_FILE = "_output.csv"
         self.RUN_FILE = "_run.sh"
         self.LOG_FILE = "run.log"
@@ -43,7 +44,8 @@ class ChempropModel(object):
 
     def run(self, input_list):
         tmp_folder = tempfile.mkdtemp(prefix="eos-")
-        data_file = os.path.join(tmp_folder, self.DATA_FILE) 
+        data_file = os.path.join(tmp_folder, self.DATA_FILE)
+        feat_file = os.path.join(tmp_folder, self.FEAT_FILE)
         output_file = os.path.join(tmp_folder, self.OUTPUT_FILE)
         log_file = os.path.join(tmp_folder, self.LOG_FILE)
         with open(data_file, "w") as f:
@@ -53,11 +55,12 @@ class ChempropModel(object):
         run_file = os.path.join(tmp_folder, self.RUN_FILE)
         with open(run_file, "w") as f:
             lines = [
-                "bash {0}/run.sh {0} {1} {2} {3}".format(
+                "bash {0}/run.sh {0} {1} {2} {3} {4}".format(
                         self.framework_dir,
                         data_file,
                         self.checkpoints_dir,
-                        output_file
+                        output_file,
+                        feat_file
                     )
                 ] 
             f.write(os.linesep.join(lines)) 
@@ -71,11 +74,9 @@ class ChempropModel(object):
             h = next(reader)
             R = []
             for r in reader: 
-                R += [{h[1]: float(r[1])}]
-        meta = {h[1]: h[1]}        
-        result = {'result': R, 'meta': meta} 
+                R += [{h[1]: float(r[1])}] 
         shutil.rmtree(tmp_folder) 
-        return result
+        return R
 
 
 class ChempropArtifact(BentoServiceArtifact):
@@ -133,6 +134,5 @@ class Service(BentoService):
     def run(self, input: List[JsonSerializable]):
         input = input[0]
         input_list = [inp["input"] for inp in input]
-        output = self.artifacts.model.run(input_list)
-        print('Returning output: ', output)
+        output = self.artifacts.model.run(input_list) 
         return [output]
