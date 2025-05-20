@@ -1,2 +1,2 @@
-python $1/code/save_features.py --data_path $2 --save_path $5 --features_generator rdkit_2d_normalized
-python $1/code/predict.py --no_features_scaling --test_path $2 --checkpoint_dir $3 --preds_path $4 --features_path $5
+python $1/code/save_features.py --data_path $2 --save_path $1/features --features_generator rdkit_2d_normalized
+python $1/code/predict.py --no_features_scaling --test_path $2 --checkpoint_dir $1/../checkpoints --preds_path $3 --features_path $1/features.npz
