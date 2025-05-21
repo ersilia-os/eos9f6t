@@ -35,13 +35,18 @@ Below are the **Output Columns** of the model:
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos9f6t](https://hub.docker.com/r/ersiliaos/eos9f6t)
-- **Docker Architecture:** `AMD64`, `ARM64`
+- **Docker Architecture:** `AMD64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos9f6t.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos9f6t.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `9`
 - **Environment Size (Mb):** `5839`
+- **Image Size (Mb):** `5743.71`
 
+**Computational Performance (seconds):**
+- 10 inputs: `55.57`
+- 100 inputs: `54.21`
+- 10000 inputs: `-1`
 
 ### References
 - **Source Code**: [http://chemprop.csail.mit.edu/checkpoints](http://chemprop.csail.mit.edu/checkpoints)
