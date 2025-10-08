@@ -2,7 +2,7 @@
 
 This model was developed to support the early efforts in the identification of novel drugs against SARS-CoV2. It predicts the probability that a small molecule inhibits SARS-3CLpro-mediated peptide cleavage. It was developed using a high-throughput screening against the 3CL protease of SARS-CoV1, as no data was yet available for the new virus (SARS-CoV2) causing the COVID-19 pandemic. It uses the ChemProp model.
 
-This model was incorporated on 2021-06-03.
+This model was incorporated on 2021-04-29.
 
 
 ## Information
@@ -41,7 +41,7 @@ Below are the **Output Columns** of the model:
 
 ### Resource Consumption
 - **Model Size (Mb):** `9`
-- **Environment Size (Mb):** `5839`
+- **Environment Size (Mb):** `5852`
 - **Image Size (Mb):** `5743.71`
 
 **Computational Performance (seconds):**
