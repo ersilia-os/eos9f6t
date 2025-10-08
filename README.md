@@ -2,8 +2,7 @@
 
 This model was developed to support the early efforts in the identification of novel drugs against SARS-CoV2. It predicts the probability that a small molecule inhibits SARS-3CLpro-mediated peptide cleavage. It was developed using a high-throughput screening against the 3CL protease of SARS-CoV1, as no data was yet available for the new virus (SARS-CoV2) causing the COVID-19 pandemic. It uses the ChemProp model.
 
-This model was incorporated on 2021-04-29.
-
+This model was incorporated on 2021-04-29.Last packaged on 2025-10-08.
 
 ## Information
 ### Identifiers
@@ -36,18 +35,18 @@ Below are the **Output Columns** of the model:
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos9f6t](https://hub.docker.com/r/ersiliaos/eos9f6t)
-- **Docker Architecture:** `AMD64`
+- **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos9f6t.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos9f6t.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `9`
 - **Environment Size (Mb):** `5852`
-- **Image Size (Mb):** `5743.71`
+- **Image Size (Mb):** `5760.92`
 
 **Computational Performance (seconds):**
-- 10 inputs: `55.57`
-- 100 inputs: `54.21`
-- 10000 inputs: `-1`
+- 10 inputs: `36.21`
+- 100 inputs: `28.61`
+- 10000 inputs: `612.21`
 
 ### References
 - **Source Code**: [http://chemprop.csail.mit.edu/checkpoints](http://chemprop.csail.mit.edu/checkpoints)
