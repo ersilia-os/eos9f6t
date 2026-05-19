@@ -22,9 +22,7 @@
     "Output Consistency": "Fixed",
     "Interpretation": "Probability of 3CL protease inhibition (%) The classifier was trained using a threshold of 12% of inhibition ",
     "Tag": [
-        "COVID19",
         "Antiviral activity",
-        "Sars-CoV-2",
         "Chemical graph model"
     ],
     "Biomedical Area": [
