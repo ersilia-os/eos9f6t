@@ -1,6 +1,6 @@
 # SARS-CoV inhibition
 
-This model was developed to support the early efforts in the identification of novel drugs against SARS-CoV2. It predicts the probability that a small molecule inhibits SARS-3CLpro-mediated peptide cleavage. It was developed using a high-throughput screening against the 3CL protease of SARS-CoV1, as no data was yet available for the new virus (SARS-CoV2) causing the COVID-19 pandemic. It uses the ChemProp model.
+Estimates whether a compound inhibits the SARS-CoV-2 main protease, 3CLpro, by blocking its cleavage of peptide substrates, a target central to early repurposing efforts against COVID-19. The model applies the directed message-passing architecture that Stokes and colleagues established for antibiotic discovery, retrained here on coronavirus protease screening data. Activity against an isolated enzyme does not guarantee antiviral effect in cells, where permeability and stability also apply.
 
 This model was incorporated on 2021-04-29.Last packaged on 2025-10-08.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2021-04-29.Last packaged on 2025-10-08.
 ### Output
 - **Output Dimension:** `1`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probability of 3CL protease inhibition (%) The classifier was trained using a threshold of 12% of inhibition 
+- **Interpretation:** Probability that a compound inhibits SARS-CoV-2 3CLpro-mediated peptide cleavage.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
