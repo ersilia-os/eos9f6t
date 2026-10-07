@@ -13,7 +13,7 @@ This model was incorporated on 2021-04-29.Last packaged on 2025-10-08.
 - **Task:** `Annotation`
 - **Subtask:** `Activity prediction`
 - **Biomedical Area:** `COVID-19`
-- **Target Organism:** `SARS-CoV-2`
+- **Target Organism:** `SARS-CoV-1`
 - **Tags:** `COVID19`, `Antiviral activity`, `Sars-CoV-2`, `Chemical graph model`
 
 ### Input
