@@ -1,6 +1,6 @@
 # SARS-CoV inhibition
 
-Estimates whether a compound inhibits the SARS-CoV-2 main protease, 3CLpro, by blocking its cleavage of peptide substrates, a target central to early repurposing efforts against COVID-19. The model applies the directed message-passing architecture that Stokes and colleagues established for antibiotic discovery, retrained here on coronavirus protease screening data. Activity against an isolated enzyme does not guarantee antiviral effect in cells, where permeability and stability also apply.
+Estimates whether a compound blocks the 3C-like protease of SARS-CoV, the 2003 coronavirus, from cleaving its peptide substrate. The training data is a fluorescence screen of 290,726 compounds tested at 6 micromolar that returned only 405 actives, so the classes are extremely imbalanced; it stands in for SARS-CoV-2 because the two proteases are close relatives and no COVID-19 data existed when the model was built. Five directed message-passing networks are ensembled, using the architecture Stokes and colleagues established for antibiotic discovery.
 
 This model was incorporated on 2021-04-29.Last packaged on 2025-10-08.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2021-04-29.Last packaged on 2025-10-08.
 ### Output
 - **Output Dimension:** `1`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probability that a compound inhibits SARS-CoV-2 3CLpro-mediated peptide cleavage.
+- **Interpretation:** Probability of inhibiting SARS-CoV 3C-like protease cleavage, from a single-point screen at 6 micromolar.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
