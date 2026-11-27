@@ -3,7 +3,7 @@
 Estimates whether a compound blocks the 3C-like protease of SARS-CoV, the 2003 coronavirus, from cleaving its peptide substrate. The training data is a fluorescence screen of 290,726 compounds tested at 6 micromolar that returned only 405 actives, so the classes are extremely imbalanced; it stands in for SARS-CoV-2 because the two proteases are close relatives and no COVID-19 data existed when the model was built. Five directed message-passing networks are ensembled, using the architecture Stokes and colleagues established for antibiotic discovery.
 
 This model was incorporated on 2021-04-29.
-Last packaged on 2025-10-08.
+Last packaged on 2026-11-27.
 
 ## Information
 ### Identifiers
@@ -42,12 +42,12 @@ Below are the **Output Columns** of the model:
 ### Resource Consumption
 - **Model Size (Mb):** `16`
 - **Environment Size (Mb):** `5835`
-- **Image Size (Mb):** `5760.92`
+- **Image Size (Mb):** `3022.94`
 
 **Computational Performance (seconds):**
-- 10 inputs: `36.21`
-- 100 inputs: `28.61`
-- 10000 inputs: `612.21`
+- 10 inputs: `32.64`
+- 100 inputs: `26.29`
+- 10000 inputs: `652.61`
 
 ### References
 - **Source Code**: [http://chemprop.csail.mit.edu/checkpoints](http://chemprop.csail.mit.edu/checkpoints)
